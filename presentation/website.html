@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inside the Suspicious Machine</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="hero">
+        <h1>Inside the Suspicious Machine</h1>
+        <p>Unpacking Rotterdam's Algorithmic Rollercoaster</p>
+    </header>
+
+    <section class="scene">
+        <p>All over the world, countless welfare recipients are being investigated after automated systems flag them as potential fraud risks. What many do not realize is that these systems closely monitor and assess their lives, reducing them to a score based on various factors. A journalistic investigation into one of these systems, in Rotterdam, uncovered that it unfairly targets individuals based on their gender and racial background. The investigation found that the system problematically views signs of vulnerability as potential indicators of suspicious activity.</p>
+    </section>
+
+    <section class="context">
+        <div class="timeline-horizontal">
+            <div class="timeline-item">
+                <div class="timeline-ball" id="ball-2017"></div>
+                <button class="timeline-btn" id="btn-2017" onclick="showInfo('2017')">2017</button>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-ball" id="ball-2018-2020"></div>
+                <button class="timeline-btn" id="btn-2018-2020" onclick="showInfo('2018-2020')">2018–2020</button>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-ball" id="ball-2021"></div>
+                <button class="timeline-btn" id="btn-2021" onclick="showInfo('2021')">2021</button>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-ball" id="ball-2022"></div>
+                <button class="timeline-btn" id="btn-2022" onclick="showInfo('2022')">Present</button>
+            </div>
+        </div>
+        <div id="timeline-content" class="timeline-content">
+        </div>
+    </section>
+    
+    <section class="ai-system-details">
+        <h2>AI System Details</h2>
+        <div class="details-section" onclick="toggleSection('tech-dev')">
+            <h3>Technology and Development <span class="toggle-icon" id="icon-tech-dev">+</span></h3>
+            <div id="tech-dev" class="details-content">
+                <p>This system is a machine learning model, specifically a <strong>gradient boosting machine</strong>, a type of machine learning model that uses decision trees as its building blocks.  It improves performance by stacking trees sequentially, where each tree corrects the errors of the previous one.</p>
+                <img src="images/tree.png" alt="Tree" class="tree">
+                <p>The model uses <strong>500 decision trees</strong>. To classify each instance, the values assigned to each person at the leaves of the trees are then combined and adjusted to produce the final risk score.</p>
+            </div>
+        </div>
+    
+        <div class="details-section" onclick="toggleSection('training-data')">
+            <h3>Training Data and Methodology <span class="toggle-icon" id="icon-training-data">+</span></h3>
+            <div id="training-data" class="details-content">
+                <p>The model uses supervised machine learning, trained on a labeled dataset of previously investigated cases. The training data consists of individuals who have been investigated, with labels of <strong>'yes fraud'</strong> or <strong>'no fraud'</strong>.</p>
+            </div>
+        </div>
+    
+        <div class="details-section" onclick="toggleSection('input-vars')">
+            <h3>Input Variables <span class="toggle-icon" id="icon-input-vars">+</span></h3>
+            <div id="input-vars" class="details-content">
+                <p>The system processes 315 input variables for each welfare recipient, including:</p>
+                <ul>
+                    <li><strong>Demographic information:</strong> age, gender, marital status</li>
+                    <li><strong>Personal characteristics:</strong> language skills, mental health history</li>
+                    <li><strong>Socioeconomic factors:</strong> neighborhood, education level</li>
+                    <li><strong>Interaction history:</strong> types of appointments, number of emails to the city</li>
+                    <li><strong>Subjective assessments:</strong> caseworker comments on physical appearance, ability to convince others</li>
+                    <li><strong>Behavioral data:</strong> hobbies, sports participation</li>
+                    <li><strong>Relationship information:</strong> length of last romantic relationship</li>
+                </ul>
+            </div>
+        </div>
+    
+        <div class="details-section" onclick="toggleSection('performance')">
+            <h3>Performance and Accuracy <span class="toggle-icon" id="icon-performance">+</span></h3>
+            <div id="performance" class="details-content">
+                <p>Internal evaluations by Rotterdam found that the model is <strong>only 50% more accurate</strong> at predicting fraud <strong>than random selection</strong>, raising concerns about effectiveness and false positives.</p>
+                <img src="images/performance.png" alt="performance" class="performance">
+                <p>The model’s ROC curve shows it slightly improves on random guessing, failing to meet performance criteria for real-world application.</p>
+            </div>
+        </div>
+    
+        <div class="details-section" onclick="toggleSection('transparency')">
+            <h3>Transparency and Interpretability <span class="toggle-icon" id="icon-transparency">+</span></h3>
+            <div id="transparency" class="details-content">
+                <p>Since the code and decision-making process are not publicly available, it's difficult to understand how the algorithm arrives at its conclusions, raising significant transparency concerns.</p>
+            </div>
+        </div>
+
+        <div class="details-section" onclick="toggleSection('data-quality')">
+            <h3>Data Quality and Sources <span class="toggle-icon" id="icon-data-quality">+</span></h3>
+            <div id="data-quality" class="details-content">
+                <p>The algorithm uses a combination of data sources, including government databases and external data providers. However, the <strong>quality and accuracy of this data are not publicly disclosed</strong>, which raises questions about the reliability of the system's outputs.</p>
+                <p>There are <strong>54 variables based on subjective assessments</strong> made by caseworkers, and any bias by the caseworker would reflect in the data.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="outcomes">
+        <h2>Outcomes</h2>
+        <section class="carousel">
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <h2>Efficiency and Decision-making</h2>
+                    <p>This system did not lead to any improvements in efficiency or decision-making. Over its five years of operation, <strong>only two out of five projects requested by the government were executed</strong>.</p>
+                    <p>In addition, the complexity of the AI's data analysis capabilities <strong>did not translate into meaningful results</strong>, since later research conducted on this algorithm showed that it can not identify new forms of fraud.</p>
+                </div>
+                <div class="carousel-slide">
+                    <h2>Discrimination</h2>
+                    <p>The system <strong>intensified existing biases</strong>, disproportionately scrutinizing low-income individuals, especially immigrants with language barriers, leading to increased societal inequalities.</p>
+                </div>
+                <div class="carousel-slide">
+                    <h2>Transparency</h2>
+                    <p>The model operated as a "black box," leaving <strong>individuals flagged for investigation without an explanation of why they were chosen</strong>, which led to a lack of understanding and the inability to challenge the decisions.</p>
+                </div>
+                <div class="carousel-slide">
+                    <h2>Accountability</h2>
+                    <p>There was <strong>no clear party or person taking responsibility</strong> for the failures or injustices of the system, even after a court ruling halted the system due to privacy rights violations.</p>
+                    <p>Accountability in situations like these remains a legal gray area, and it is crucial for authorities to establish more detailed and comprehensive laws to address the recent surge in AI adoption.</p>
+                </div>
+            </div>
+        
+            <div class="carousel-controls">
+                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+        </section>
+    </section>
+
+    <section class="societal-response">
+        <h2>Societal Response</h2>
+
+        <div class="response-content">
+            <p class="highlight">The court ruled the algorithm unconstitutional in 2020, citing violations of Article 8 of the European Convention on Human Rights.</p>
+            <p>There were notable societal responses, including <strong>protests and legal actions</strong> led by civil rights groups against the algorithm. Activists raised issues about privacy and discrimination, resulting in a key court decision in 2020 that <strong>ruled the algorithm unconstitutional</strong>.</p>
+            <p><strong>Media coverage</strong> played a crucial role in raising awareness, influencing public opinion, and pushing for policy changes regarding similar systems.</p>
+            
+
+            <div class="highlight-box">
+                <blockquote>
+                    The combination of civil society activism and media attention catalyzed significant political dialogue about the future of algorithmic governance in the Netherlands.
+                </blockquote>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="sara-yusef">
+        <div class="side" id="sara-side">
+            <img id="sara-image" src="images/sara_1.png" alt="Sara">
+            <button id="sara-button">Become Sara</button>
+        </div>
+        <div class="side" id="yusef-side">
+            <img id="yusef-image" src="images/yusef_1.png" alt="Yusef">
+            <button id="yusef-button">Become Yusef</button>
+        </div>
+    </section>
+
+    <section class="interactive-dataset">
+        <h2>MBA Admission Dataset</h2>
+        <p> The <strong>MBA Admission Dataset, Class of 2025</strong> provides a relevant context for examining fairness and explainability in decision-making processes. Both the MBA Admission Dataset and the Rotterdam system share <strong>concerns regarding fairness and explainability</strong>, albeit in different contexts.</p>
+        <p> While the <strong>Rotterdam system is punitive</strong> in nature, denying essential benefits, the MBA admission process is not punitive but <strong>still has a significant impact on candidates' future</strong> professional opportunities.</p>
+        <table id="mba-dataset-table">
+            <thead>
+                <tr>
+                    <th>Serial Number</th>
+                    <th>Gender</th>
+                    <th>International</th>
+                    <th>GPA</th>
+                    <th>Major</th>
+                    <th>Race</th>
+                    <th>GMAT</th>
+                    <th>Work Experience</th>
+                    <th>Work Industry</th>
+                    <th>Admission</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Female</td>
+                    <td>False</td>
+                    <td>3.3</td>
+                    <td>Business</td>
+                    <td>Asian</td>
+                    <td>620.0</td>
+                    <td>3.0</td>
+                    <td>Financial</td>
+                    <td>Admit</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Male</td>
+                    <td>False</td>
+                    <td>3.28</td>
+                    <td>Humanities</td>
+                    <td>Black</td>
+                    <td>680.0</td>
+                    <td>5.0</td>
+                    <td>Investment Management</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Female</td>
+                    <td>True</td>
+                    <td>3.3</td>
+                    <td>Business</td>
+                    <td>-</td>
+                    <td>710.0</td>
+                    <td>5.0</td>
+                    <td>Technology</td>
+                    <td>Admit</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Male</td>
+                    <td>False</td>
+                    <td>3.47</td>
+                    <td>STEM</td>
+                    <td>Black</td>
+                    <td>690.0</td>
+                    <td>6.0</td>
+                    <td>Technology</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Male</td>
+                    <td>False</td>
+                    <td>3.35</td>
+                    <td>STEM</td>
+                    <td>Hispanic</td>
+                    <td>590.0</td>
+                    <td>5.0</td>
+                    <td>Consulting</td>
+                    <td>-</td>
+                </tr>
+            </tbody>
+        </table>   
+        <div class="button-container">
+            <button id="see-original-btn">See Original</button>
+            <button id="see-featured-btn">After Feature Engineering</button>
+        </div> 
+    </section>   
+
+    <section class="imbalanced-data">
+        <div class="side" id="text-side">
+            <p>To address class imbalance in the dataset, we applied the <strong>Borderline-
+                SMOTE</strong> technique. BL-SMOTE is an extension of the
+                Synthetic Minority Over-sampling Technique (SMOTE) that targets
+                borderline instances, which are minority class samples near the
+                decision boundary or surrounded by majority class samples.</p>
+            <p>These instances are at higher risk of misclassification. By oversampling
+                these borderline instances, <strong>BL-SMOTE improves the representation
+                of the minority class in challenging regions</strong>, enhancing the model’s
+                ability to correctly classify these cases while minimizing the risk of
+                overfitting.</p>
+        </div>
+        <div class="side" id="image-side">
+            <img id="charts" src="images/chart1.png" alt="chart_comparisson">
+            <button id="SMOTE-button">After SMOTE</button>
+        </div>
+    </section>
+
+
+    <footer class="takeaway">
+        <h2>Our Big Takeaway</h2>
+        <p>Building fair algorithms means balancing performance with fairness. Let’s stop letting black-box models make unchecked decisions and start designing AI systems that serve <em>everyone</em> equitably.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
