@@ -265,7 +265,85 @@
         </div>
     </section>
 
-
+    <section class="classification-report">
+        <h2>Classification Report</h2>
+        <p>The classification report evaluates the model’s ability to predict MBA admission, where <strong>0</strong> represents “not admitted” and <strong>1</strong> represents “admitted.”</p>
+    
+        <div class="report-container">
+            <div class="class-report">
+                <h3>Class 0 (Not Admitted)</h3>
+                <div class="metric">
+                    <span>Precision: <strong>0.92</strong></span>
+                    <div class="progress-bar" style="--value: 92%;"></div>
+                </div>
+                <div class="metric">
+                    <span>Recall: <strong>0.81</strong></span>
+                    <div class="progress-bar" style="--value: 81%;"></div>
+                </div>
+                <div class="metric">
+                    <span>F1-score: <strong>0.86</strong></span>
+                    <div class="progress-bar" style="--value: 86%;"></div>
+                </div>
+            </div>
+    
+            <div class="class-report">
+                <h3>Class 1 (Admitted)</h3>
+                <div class="metric">
+                    <span>Precision: <strong>0.38</strong></span>
+                    <div class="progress-bar" style="--value: 38%;"></div>
+                </div>
+                <div class="metric">
+                    <span>Recall: <strong>0.61</strong></span>
+                    <div class="progress-bar" style="--value: 61%;"></div>
+                </div>
+                <div class="metric">
+                    <span>F1-score: <strong>0.47</strong></span>
+                    <div class="progress-bar" style="--value: 47%;"></div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="overall-metrics">
+            <h3>Overall Metrics</h3>
+            <div class="metric">
+                <span>Accuracy: <strong>0.78</strong></span>
+                <div class="progress-bar" style="--value: 78%;"></div>
+            </div>
+            <div class="metric">
+                <span>Macro Avg F1-score: <strong>0.67</strong></span>
+                <div class="progress-bar" style="--value: 67%;"></div>
+            </div>
+            <div class="metric">
+                <span>Weighted Avg F1-score: <strong>0.80</strong></span>
+                <div class="progress-bar" style="--value: 80%;"></div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="explainability-section">
+        <h2>Transparency and Explainability</h2>
+        <p>
+            According to the Trustworthy AI guidelines, AI systems should be transparent and fair. 
+            Decisions need to be explained in an understandable manner to humans.
+        </p>
+    
+        <div class="tabs">
+            <button class="tab-button active" data-target="lime">LIME</button>
+            <button class="tab-button" data-target="shap">SHAP</button>
+        </div>
+    
+        <div class="tab-content lime active">
+            <p>LIME explains local predictions by approximating them with a simpler, interpretable model.</p>
+            <div class="lime-plot">
+                <img src="images/lime_explanation.png" alt="LIME Feature Contribution">
+            </div>
+        </div>
+    
+        <div class="tab-content shap">
+            <p>SHAP explains predictions by distributing contributions among features using Shapley values.</p>
+        </div>
+    </section>
+    
     <footer class="takeaway">
         <h2>Our Big Takeaway</h2>
         <p>Building fair algorithms means balancing performance with fairness. Let’s stop letting black-box models make unchecked decisions and start designing AI systems that serve <em>everyone</em> equitably.</p>

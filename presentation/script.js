@@ -249,3 +249,18 @@ document.getElementById("SMOTE-button").addEventListener("click", function () {
         ? "images/chart2.png"
         : "images/chart1.png";
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.tab-button');
+    const contents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
+            tab.classList.add('active');
+            document.querySelector(`.${tab.dataset.target}`).classList.add('active');
+        });
+    });
+});
+
