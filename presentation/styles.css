@@ -689,17 +689,18 @@ table tbody tr {
     transition: background-color 0.3s ease;
 }
 
-.tab-button.active {
+.tab-button.active, .tab-button-shap.active {
     background-color: #970000;
     color: #fff;
 }
 
-.tab-content {
+
+.tab-content, .tab-content-shap {
     display: none;
     text-align: center;
 }
 
-.tab-content.active {
+.tab-content.active, .tab-content-shap.active {
     display: block;
 }
 

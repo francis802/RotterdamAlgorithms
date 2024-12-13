@@ -367,6 +367,8 @@
         <p>
             According to the Trustworthy AI guidelines, AI systems should be transparent and fair. 
             Decisions need to be explained in an understandable manner to humans.
+            For this purpose, LIME (Local Interpretable Model-Agnostic Explanations) and SHAP (SHapley Additive eXplanations)
+            can be used to improve the explainability of any given model.
         </p>
     
         <div class="tabs">
@@ -383,6 +385,24 @@
     
         <div class="tab-content shap">
             <p>SHAP explains predictions by distributing contributions among features using Shapley values.</p>
+            <div class="tabs-shap">
+                <button class="tab-button-shap active" data-target="shap-waterfall">Waterfall</button>
+                <button class="tab-button-shap" data-target="shap-summary">Summary</button>
+                <button class="tab-button-shap" data-target="shap-dependence">Dependence</button>
+            </div>
+
+            <div class="tab-content-shap shap-waterfall active">
+                <p>The waterfall plot explains a local prediction and can be directly compared to the LIME plot</p>
+                <img src="images/shap_waterfall_plot.png" alt="SHAP Local explanation">
+            </div>
+            <div class="tab-content-shap shap-summary">
+                <p>The summary plot provdes insights into the global reasoning of the model, helping to understand it as a whole</p>
+                <img src="images/shap_summary_plot.png" alt="SHAP Global explanation - Summary Plot">
+            </div>
+            <div class="tab-content-shap shap-dependence">
+                <p>This dependence plot shows how different races impact the model's prediction</p>
+                <img src="images/shap_dependence_plot.png" alt="SHAP Global explanation - Dependence Plot">
+            </div>
         </div>
     </section>
 
