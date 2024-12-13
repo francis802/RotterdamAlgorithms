@@ -426,7 +426,7 @@ strong{
 
 
 
-.societal-response h2 {
+.societal-response h2, .takeaway h2 {
     font-size: 2.5rem;
     font-weight: 700;
     color: #ff1c1c;
@@ -724,3 +724,8 @@ table tbody tr {
 }
 
 
+.authors{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
