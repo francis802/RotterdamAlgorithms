@@ -435,6 +435,15 @@ strong{
     text-transform: uppercase;
 }
 
+.countfair {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ff1c1c;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
 
 .sara-yusef {
     display: flex;
@@ -712,3 +721,5 @@ table tbody tr {
     position: relative;
     overflow: hidden;
 }
+
+

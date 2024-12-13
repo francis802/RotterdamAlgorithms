@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inside the Suspicious Machine</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="wired.css">
+    
 </head>
 <body>
     <header class="hero">
@@ -128,8 +130,12 @@
             </div>
         </section>
     </section>
+    
+
+    <h2 class="countfair">Counterfactual Fairness</h2>
 
     <section class="sara-yusef">
+        
         <div class="side" id="sara-side">
             <img id="sara-image" src="images/sara_1.png" alt="Sara">
             <button id="sara-button">Become Sara</button>
@@ -139,6 +145,38 @@
             <button id="yusef-button">Become Yusef</button>
         </div>
     </section>
+    
+                
+   
+
+
+    <section class="slide">
+        <p> By progressively transforming an average welfare recipient into
+            two vulnerable individuals flagged as fraudulent by the model, the
+            reporters were effectively evaluating whether the algorithm was
+            <strong>counterfactually fair.</strong></p>
+
+        <p> <strong> Counterfactual fairness </strong> is a concept that considers a model fair if its predictions
+            remain unchanged when <strong>sensitive attributes</strong>, such as gender or
+            ethnicity, are altered in a hypothetical scenario, provided all other
+            factors remain constant.</p>
+
+        <p> <strong>Both a fairness and explainability tool</strong>: It not only ensures that models make unbiased predictions but also enhances
+                explainability, since it shows how a determinate variable affects certain predictions.</p>
+
+        <p> Because of its straightforward nature, counterfactual fairness is <strong>easily interpretable</strong>, making it accessible even to <strong>individuals without technical expertise</strong> in machine learning.</p>
+
+
+        
+        
+    </section>
+
+    <br>
+    <br>
+
+    
+
+  
 
     <section class="societal-response">
         <h2>Societal Response</h2>
@@ -342,6 +380,26 @@
         <div class="tab-content shap">
             <p>SHAP explains predictions by distributing contributions among features using Shapley values.</p>
         </div>
+    </section>
+
+    
+    <section class="scene">
+        <h2 class="countfair">Counterfactual Fairness</h2>
+        
+        <p>
+            Our approach to counterfactual fairness involved selecting three distinct subsets of individuals from the dataset, altering a sensitive attribute, and examining its impact on the model's predictions.        </p>
+
+            <p style="text-align: center;"><strong>First example:</strong> A subset of false-negative Black individuals who were unjustly denied access to the MBA program by the model:</p>
+            <p style="text-align: center;">When their race was switched to White, <strong>39%</strong> (14 individuals) were predicted to be accepted by the model.</p>
+
+<p style="text-align: center;"><strong>Second example:</strong> A subset of true-positive White individuals who were correctly accepted into the MBA program:</p>
+<p style="text-align: center;">When their race was switched to Black, <strong>33%</strong> (54 individuals) were predicted to be rejected by the model.</p>
+
+<p style="text-align: center;"><strong>Third example:</strong> A subset of wrongfully rejected Asian women: </p>
+<p style="text-align: center;">When their gender was switched to male, <strong>7%</strong> (2 individuals) were predicted to be accepted by the model.</p>
+
+    
+       
     </section>
     
     <footer class="takeaway">
