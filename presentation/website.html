@@ -85,7 +85,7 @@
         <div class="details-section" onclick="toggleSection('transparency')">
             <h3>Transparency and Interpretability <span class="toggle-icon" id="icon-transparency">+</span></h3>
             <div id="transparency" class="details-content">
-                <p>Since the code and decision-making process are not publicly available, it's difficult to understand how the algorithm arrives at its conclusions, raising significant transparency concerns.</p>
+                <p>Since the code and decision-making process are <strong>not publicly available</strong>, it's difficult to understand how the algorithm arrives at its conclusions, raising significant transparency concerns.</p>
             </div>
         </div>
 
@@ -93,7 +93,9 @@
             <h3>Data Quality and Sources <span class="toggle-icon" id="icon-data-quality">+</span></h3>
             <div id="data-quality" class="details-content">
                 <p>The algorithm uses a combination of data sources, including government databases and external data providers. However, the <strong>quality and accuracy of this data are not publicly disclosed</strong>, which raises questions about the reliability of the system's outputs.</p>
-                <p>There are <strong>54 variables based on subjective assessments</strong> made by caseworkers, and any bias by the caseworker would reflect in the data.</p>
+                <p>There are <strong>54 variables based on subjective assessments</strong> made by <strong>caseworkers</strong>, and any bias by the caseworker would reflect in the data.</p>
+                <p>Only <strong>52 young welfare recipients</strong> were included instead of <strong>880</strong>, causing the algorithm to wrongly associate younger individuals with higher fraud risk.</p>
+                <p>Caseworkers' comments are treated as <strong>binary</strong>, so both positive and negative comments equally impact the risk score.</p>
             </div>
         </div>
     </section>
