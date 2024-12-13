@@ -729,3 +729,7 @@ table tbody tr {
     flex-direction: row;
     justify-content: space-evenly;
 }
+
+.github-link {
+    color: #ff1c1c;
+}
